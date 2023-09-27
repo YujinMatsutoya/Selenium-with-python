@@ -3,11 +3,13 @@ Tests for DuckDuckGo searches
 '''
 from pages.search_page import DuckDuckGoSearchPage
 from pages.results_page import DuckDuckGoResultsPage
+import pytest
 
-def test_basic_duckduckgo_search(browser):
+@pytest.mark.parametrize('query', ['panda', 'brunch', 'poodle'])
+def test_basic_duckduckgo_search(browser, query):
     search_page = DuckDuckGoSearchPage(browser)
     result_page = DuckDuckGoResultsPage(browser)
-    query = "panda"
+    #query = "panda"
 
     # Given the DuckDuckGo homepage is displayed
     search_page.load()
@@ -19,7 +21,7 @@ def test_basic_duckduckgo_search(browser):
     assert query in result_page.title()
 
     # Then the search query is 'panda'
-    assert result_page.search_input_value() == 'panda'
+    assert result_page.search_input_value() == query
 
     # Then the search result links pertain to 'panda'
     for title in result_page.results_link_titles():
