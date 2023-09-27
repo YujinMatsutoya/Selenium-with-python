@@ -24,5 +24,5 @@ def test_basic_duckduckgo_search(browser):
     # Then the search result links pertain to 'panda'
     for title in result_page.results_link_titles():
         assert  query.lower() in title.lower()
-#
+
     #raise Exception("Incomplete Test")
