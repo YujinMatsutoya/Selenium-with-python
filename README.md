@@ -8,6 +8,7 @@ Tests will be written for the search engine DuckDuckGo (https://www.duckduckgo.c
 ## Requirements
 - Requires Python 3.8 or higher.
 - Pipenv
+- Pytest
 - [ChromeDriver](https://sites.google.com/a/chromium.org/chromedriver/) for Chrome
 - [geckodriver](https://github.com/mozilla/geckodriver/releases) for Firefox
 
